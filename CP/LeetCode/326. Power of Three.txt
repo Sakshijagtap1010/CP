@@ -1,0 +1,26 @@
+326. Power of Three
+
+Example 1:
+
+Input: n = 27
+Output: true
+Explanation: 27 = 33
+
+code:
+
+class Solution {
+public:
+    bool isPowerOfThree(int n) {
+        for(int i=0;i<=30;i++)
+        {
+            //2147483647
+            double ans=pow(3,i);
+            if(ans==n)
+            {
+                return true;
+            }
+        }
+        return false;
+        
+    }
+};
