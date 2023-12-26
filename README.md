@@ -27,8 +27,8 @@ int main()
 }
 ```
 
-# Binary Search
-## code:
+## Binary Search
+### code:
 ```
 #include<iostream>
 using namespace std;
