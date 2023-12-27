@@ -27,7 +27,7 @@ int main()
 }
 ```
 
-## Binary Search
+## Binary Search O(logn)
 ### code:
 ```
 #include<iostream>
@@ -67,6 +67,54 @@ int main()
 
     int index = BinarySearch(even,6,8);
     cout<<"index:"<<index;
+
+    return 0;
+}
+```
+
+## Selection Sort O(n^2)
+### code:-
+```
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void selectionSort(vector<int>& arr, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        // Assume the current index is the minimum
+        int minIndex = i;
+
+        // Find the index of the minimum element in the unsorted portion
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        // Swap the minimum element with the first unsorted element
+        swap(arr[minIndex], arr[i]);
+    }
+}
+
+int main() {
+    vector<int> arr = {64, 25, 12, 22, 11};
+    int n = arr.size();
+
+    cout << "Original array: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    // Call the selectionSort function
+    selectionSort(arr, n);
+
+    cout << "Sorted array: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
 
     return 0;
 }
