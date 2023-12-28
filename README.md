@@ -14,8 +14,7 @@ int LinearSearch(int arr[],int size, int key)
             if(arr[i]==key)
             {
                 cout<<i;
-         
-						}
+            }
     }
 
 }
