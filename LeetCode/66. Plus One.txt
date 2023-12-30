@@ -1,0 +1,28 @@
+66. Plus One
+
+code:-
+
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+     int n = digits.size();
+
+    // Add 1 to the least significant digit
+    digits[n - 1] += 1;
+
+    // Handle carry
+    for (int i = n - 1; i > 0 && digits[i] > 9; --i) {
+        digits[i] = 0;
+        digits[i - 1] += 1;
+    }
+
+    // If the most significant digit has a carry, insert a new digit
+    if (digits[0] > 9) {
+        digits[0] = 0;
+        digits.insert(digits.begin(), 1);
+    }
+
+    // digits is now [1, 2, 4], which is the result
+    return digits;
+}
+};
